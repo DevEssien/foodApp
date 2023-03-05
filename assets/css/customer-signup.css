@@ -1,99 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
-
-* {box-sizing: border-box}
-
-body {
-  background: url(../img/afrifoodHomepage.jpeg) lightpink;
-  background-size: cover;
+.container{
+    height: 90vh;
+    margin-top: 5vh;
 }
 
-/* Add padding to containers */
-.container {
-  font-family: Montserrat Light, sans-serif;
-  position: relative;
-  background: linear-gradient(to top left, #cda45e 0%, #d7c0d0 100%);
-  font-weight: 300;
-  padding: 16px;
-  width: 40%;
-  height: 75vh;
-  border-radius: 25px;
-  margin: auto;
-  margin-top: 12.5vh;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 35px 0;
-  display: inline-block;
-  border: 0px;
-  border-radius: 20px;
-  background: #f1f1f1;
-  transition: all .3s;  
-  font-family: Quicksand;
-}
-
-input[type=password]{
-  margin-bottom: 21vh;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ccd;
-  outline: none;
-  transition: all .3s;
-}
-
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit/register button */
-.registerbtn {
-  background-image: linear-gradient(to top left, #04aa6d 0%, #04aaaf 100%);
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: default;
-  width: 100%;
-  opacity: 0.9;
-  transition: linear 0.2s;
-  font-size: 16px;
+.registerbtn{
+    background-image: linear-gradient(to top left, #04aa6d 0%, #04aaaf 100%);
+    color: white;
+    padding: 16px 20px;
+    margin: 1vh auto 8px 30%;
+    border: none;
+    cursor: default;
+    width: 40%;
+    transition: linear 0.2s;
+    font-size: 16px;
+    border-radius: 30px;
 }
 
 .registerbtn:hover {
-  opacity: 1;
-  border-radius: 20px;
-  transition: linear 0.2s;
+    transition: linear 0.2s;
+    background-image: linear-gradient(to top left, #02884b 0%, #02888d 100%);
+  }
+
+input{
+    height: 40px;
 }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
+label[for=email]{
+    margin-left: 45%;
+}
+label[for=password]{
+    margin-left: 42%;
+}
+label[for=confirm]{
+    margin-left: 36%;
 }
 
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
+#terms{
+    text-align: center;
 }
 
-.registration{
-  transition-duration: 1s;
-  position: relative;
-  display: block;
-  z-index: 1;
-}
-
-#overlay{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
+.signin{
+    background-color: transparent;
 }

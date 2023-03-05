@@ -13,7 +13,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "assets")));
 
-app.use(customerRoute);
+app.use("/subscriber", customerRoute);
 
 mongoose.set("strictQuery", false);
 
