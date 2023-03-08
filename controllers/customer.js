@@ -1,10 +1,6 @@
 const Customer = require("../models/customer");
 const bcrypt = require("bcryptjs");
 
-exports.getHome = async (req, res, next) => {
-    return res.status(200).render("index");
-};
-
 exports.getSignup = async (req, res, next) => {
     return res.status(200).render("customer/signup-init");
 };
@@ -61,6 +57,7 @@ exports.postSignup2 = async (req, res, next) => {
 };
 
 exports.postLogin = async (req, res, next) => {
+    console.log(req.body);
     const { email, password } = req.body;
     try {
         const customer = await Customer.findOne({ email: email });
