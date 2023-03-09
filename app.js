@@ -34,11 +34,11 @@ app.use((error, req, res, next) => {
     });
 });
 
-mongoose.set("strictQuery", false);
+// mongoose.set("strictQuery", false);
 
-mongoose.connect("mongodb://localhost:27017/afriFoodsDB", {
-    useNewUrlParser: true,
-});
+// mongoose.connect("mongodb://localhost:27017/afriFoodsDB", {
+//     useNewUrlParser: true,
+// });
 
 app.listen(4000, () => {
     console.log("server spinning at port 4000");
