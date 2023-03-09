@@ -43,21 +43,12 @@ router.post(
 
 router.post(
     "/login",
-    // [
-    //     check("email")
-    //         .isEmail()
-    //         .withMessage("Please enter a valid email address")
-    //         .custom(async (email, { req }) => {
-    //             try {
-    //             } catch (error) {
-    //                 if (!error.statusCode) {
-    //                     error.statusCode = 500;
-    //                 }
-    //                 next(error);
-    //             }
-    //             const customer = await Customer.findOne({ email: email });
-    //         }),
-    // ],
+    [
+        check("email")
+            .isEmail()
+            .withMessage("Please enter a valid email address")
+            .normalizeEmail(),
+    ],
     customerController.postLogin
 );
 
