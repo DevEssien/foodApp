@@ -1,5 +1,5 @@
 const express = require("express");
-const { check, body } = require("express-validator/check");
+const { check, body } = require("express-validator");
 
 const customerController = require("../controllers/customer");
 const Customer = require("../models/customer");
@@ -22,34 +22,28 @@ router.post(
                         email: email,
                     });
                     if (foundCustomer) {
-                        return Promise.reject(
-                            new Error(
-                                "Email already exist, enter another Email"
-                            )
-                        );
+                        return Promise.reject(new Error("Email already exist, enter another Email"));
                     }
                 } catch (error) {
-                    if (!error.statusCode) {
-                        error.statusCode = 500;
-                    }
-                    next(error);
+                    console.log(error);
                 }
             })
             .normalizeEmail(),
-        body("password").isLength({ min: 4 }).trim(),
+        body("password", "Please enter a password with at least 4 characers long")
+            .isAlphanumeric()
+            .isLength({ min: 4 })
+            .trim(),
     ],
-    customerController.postSignup1
+    customerController.postSignup1,
 );
 
 router.post(
     "/login",
     [
-        check("email")
-            .isEmail()
-            .withMessage("Please enter a valid email address")
-            .normalizeEmail(),
+        check("email").isEmail().withMessage("Please enter a valid email address").normalizeEmail(),
+        body("password").isAlphanumeric().trim(),
     ],
-    customerController.postLogin
+    customerController.postLogin,
 );
 
 module.exports = router;

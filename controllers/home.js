@@ -12,7 +12,6 @@ exports.postMessage = (req, res, next) => {
         <p1> message: ${message}</p>
     `;
     Mail.sendmail(res, name, subject, msg);
-    // return res.redirect("/");
 };
 
 exports.postTableBooking = (req, res, next) => {
